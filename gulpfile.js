@@ -53,6 +53,6 @@ gulp.task('watch', function() {
 	gulp.watch('scripts/js/*.js', notifyLiveReload);
 });
 
-gulp.task('default', ['express', 'watch', 'livereload'], function() {
+gulp.task('default', ['express', 'watch', 'livereload', 'styles', 'react'], function() {
 
 });
