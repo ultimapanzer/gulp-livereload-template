@@ -1,10 +1,14 @@
 {
-  "name": "mime-react",
+  "name": "gulp-livereload-template",
   "version": "1.0.0",
-  "description": "QA compare mime UI",
+  "description": "",
   "main": "gulpfile.js",
   "scripts": {
     "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/ultimapanzer/gulp-livereload-template.git"
   },
   "author": "",
   "license": "ISC",
