@@ -2,7 +2,8 @@ var gulp = require('gulp');
     sass = require('gulp-ruby-sass'),
     autoprefixer = require('gulp-autoprefixer'),
     minifycss = require('gulp-minify-css'),
-    rename = require('gulp-rename');
+    rename = require('gulp-rename'),
+    react = require('gulp-react');
     
 var tinylr;
 gulp.task('livereload', function() {
@@ -38,13 +39,20 @@ gulp.task('styles', function() {
 		.pipe(gulp.dest('css'));
 });
 
+gulp.task('react', function() {
+	return gulp.src('scripts/jsx/*.jsx')
+		.pipe(react())
+		.pipe(gulp.dest('scripts/js/'));
+});
+
 gulp.task('watch', function() {
 	gulp.watch('sass/*.sass', ['styles']);
 	gulp.watch('*.html', notifyLiveReload);
 	gulp.watch('css/*.css', notifyLiveReload);
-	gulp.watch('scripts/*.js');
+	gulp.watch('scripts/jsx/*.jsx', ['react']);
+	gulp.watch('scripts/js/*.js', notifyLiveReload);
 });
 
-gulp.task('default', ['express', 'livereload', 'watch'], function() {
+gulp.task('default', ['express', 'watch', 'livereload'], function() {
 
 });
