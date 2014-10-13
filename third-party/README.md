@@ -1,0 +1,1 @@
+This is where bower will install third-party libraries, do not check in any installed packages.
